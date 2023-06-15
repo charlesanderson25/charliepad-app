@@ -1,9 +1,23 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button, ActivityIndicator, Alert, TextInput } from 'react-native';
+
+const text = {
+  test: "Olá, Mundo!",
+  buttonTest: "Button Test",
+  input: "Informe seu texto"
+}
 
 export default function App() {
+
+  const onPressButton =  function onPress(alerta : any) {
+    Alert.alert("Fui clicado!")
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <ActivityIndicator/>
+      <Text>{text.test}</Text>
+      <Button onPress={onPressButton} title={text.buttonTest}/>
+      <TextInput value={text.input}/>
     </View>
   );
 }
