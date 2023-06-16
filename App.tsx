@@ -7,6 +7,8 @@ import {
   ActivityIndicator,
   Alert,
   TextInput,
+  StatusBar,
+  SafeAreaView,
 } from "react-native";
 
 const text = {
@@ -21,12 +23,13 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <StatusBar />
       <ActivityIndicator />
       <Text>{text.test}</Text>
       <Button onPress={onPressButton} title={text.buttonTest} />
       <TextInput value={text.input} />
-    </View>
+    </SafeAreaView>
   );
 }
 
