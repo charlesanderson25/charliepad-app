@@ -10,6 +10,7 @@ import {
   StatusBar,
   SafeAreaView,
 } from "react-native";
+import Banner from "./src/components/Banner";
 
 const text = {
   test: "Olá, Mundo!",
@@ -25,6 +26,7 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar />
+      <Banner />
       <ActivityIndicator />
       <Text>{text.test}</Text>
       <Button onPress={onPressButton} title={text.buttonTest} />
