@@ -1,7 +1,12 @@
+import { Text } from "react-native";
 import { View } from "react-native";
 
 const CreateNotepadScreen = () => {
-  return <View>CreateNotepadScreen</View>;
+  return (
+    <View>
+      <Text>CreateNotepadScreen</Text>
+    </View>
+  );
 };
 
 export default CreateNotepadScreen;
