@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
   },
 
   icon: {
-    color: "#f9004d",
+    // color: "#f9004d",
+    backgroundColor: "#f9004d",
   },
 });
