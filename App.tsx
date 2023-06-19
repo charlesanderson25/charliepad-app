@@ -7,24 +7,72 @@ import CreateNotepadScreen from "./src/screens/CreatNotepadScreen";
 import EditNotepadScreen from "./src/screens/EditNotepadScreen";
 import HomeScreen from "./src/screens/HomeScreen";
 import ListNotepadScreen from "./src/screens/ListNotepadScreen";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import ViewNotepadScreen from "./src/screens/ViewNotepadScreen";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 
-const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <NavigationContainer>
         <StatusBar />
         <Banner />
-      </SafeAreaView>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="CreateNotepad" component={CreateNotepadScreen} />
-        <Stack.Screen name="EditNotepad" component={EditNotepadScreen} />
-        <Stack.Screen name="ListNotepad" component={ListNotepadScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+
+        <Drawer.Navigator initialRouteName="Home">
+          <Drawer.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{
+              drawerIcon({ color, focused, size }) {
+                return <Ionicons name="home" size={size} color={color} />;
+              },
+            }}
+          />
+          <Drawer.Screen
+            name="CreateNotepad"
+            component={CreateNotepadScreen}
+            options={{
+              drawerIcon({ color, focused, size }) {
+                return <Ionicons name="create" size={size} color={color} />;
+              },
+            }}
+          />
+          <Drawer.Screen
+            name="EditNotepad"
+            component={EditNotepadScreen}
+            options={{
+              drawerIcon({ color, focused, size }) {
+                return <Entypo name="edit" size={size} color={color} />;
+              },
+            }}
+          />
+          <Drawer.Screen
+            name="ListNotepad"
+            component={ListNotepadScreen}
+            options={{
+              drawerIcon({ color, focused, size }) {
+                return (
+                  <FontAwesome5 name="list-ul" size={size} color={color} />
+                );
+              },
+            }}
+          />
+          <Drawer.Screen
+            name="ViewNotepad"
+            component={ViewNotepadScreen}
+            options={{
+              drawerIcon({ color, focused, size }) {
+                return <FontAwesome5 name="search" size={size} color={color} />;
+              },
+            }}
+          />
+        </Drawer.Navigator>
+      </NavigationContainer>
+    </SafeAreaView>
   );
 }
 
