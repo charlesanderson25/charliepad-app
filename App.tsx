@@ -27,6 +27,7 @@ export default function App() {
             name="Home"
             component={HomeScreen}
             options={{
+              drawerLabel: "Home",
               drawerIcon({ color, focused, size }) {
                 return <Ionicons name="home" size={size} color={color} />;
               },
@@ -36,6 +37,7 @@ export default function App() {
             name="CreateNotepad"
             component={CreateNotepadScreen}
             options={{
+              drawerLabel: "Criar Notepad",
               drawerIcon({ color, focused, size }) {
                 return <Ionicons name="create" size={size} color={color} />;
               },
@@ -45,6 +47,7 @@ export default function App() {
             name="EditNotepad"
             component={EditNotepadScreen}
             options={{
+              drawerLabel: "Editar Notepad",
               drawerIcon({ color, focused, size }) {
                 return <Entypo name="edit" size={size} color={color} />;
               },
@@ -54,6 +57,7 @@ export default function App() {
             name="ListNotepad"
             component={ListNotepadScreen}
             options={{
+              drawerLabel: "Listar Notepad",
               drawerIcon({ color, focused, size }) {
                 return (
                   <FontAwesome5 name="list-ul" size={size} color={color} />
@@ -65,6 +69,7 @@ export default function App() {
             name="ViewNotepad"
             component={ViewNotepadScreen}
             options={{
+              drawerLabel: "Ver Notepad",
               drawerIcon({ color, focused, size }) {
                 return <FontAwesome5 name="search" size={size} color={color} />;
               },
