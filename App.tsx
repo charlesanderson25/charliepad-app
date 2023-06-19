@@ -4,9 +4,9 @@ import "react-native-gesture-handler";
 import { StyleSheet, StatusBar, SafeAreaView } from "react-native";
 import Banner from "./src/components/Banner";
 import CreateNotepadScreen from "./src/screens/CreatNotepadScreen";
-import EditNotepadScreen from "./src/screens/CreatNotepadScreen";
-import HomeScreen from "./src/screens/CreatNotepadScreen";
-import ListNotepadScreen from "./src/screens/CreatNotepadScreen";
+import EditNotepadScreen from "./src/screens/EditNotepadScreen";
+import HomeScreen from "./src/screens/HomeScreen";
+import ListNotepadScreen from "./src/screens/ListNotepadScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
