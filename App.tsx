@@ -12,6 +12,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { Ionicons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
+import screens from "./screens.json";
 
 const Drawer = createDrawerNavigator();
 
@@ -24,7 +25,7 @@ export default function App() {
 
         <Drawer.Navigator initialRouteName="Home">
           <Drawer.Screen
-            name="Home"
+            name={screens.home}
             component={HomeScreen}
             options={{
               drawerLabel: "Home",
@@ -34,7 +35,7 @@ export default function App() {
             }}
           />
           <Drawer.Screen
-            name="CreateNotepad"
+            name={screens.createNotepad}
             component={CreateNotepadScreen}
             options={{
               drawerLabel: "Criar Notepad",
@@ -44,7 +45,7 @@ export default function App() {
             }}
           />
           <Drawer.Screen
-            name="EditNotepad"
+            name={screens.editNotepad}
             component={EditNotepadScreen}
             options={{
               drawerLabel: "Editar Notepad",
@@ -54,7 +55,7 @@ export default function App() {
             }}
           />
           <Drawer.Screen
-            name="ListNotepad"
+            name={screens.listNotepad}
             component={ListNotepadScreen}
             options={{
               drawerLabel: "Listar Notepad",
@@ -66,7 +67,7 @@ export default function App() {
             }}
           />
           <Drawer.Screen
-            name="ViewNotepad"
+            name={screens.viewNotepad}
             component={ViewNotepadScreen}
             options={{
               drawerLabel: "Ver Notepad",
