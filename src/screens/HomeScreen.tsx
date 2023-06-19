@@ -1,5 +1,6 @@
 import { Button } from "react-native";
 import { View, Text } from "react-native";
+import screens from "../../screens.json";
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -7,7 +8,7 @@ const HomeScreen = ({ navigation }) => {
       <Button
         title="Ver Notepads"
         onPress={() => {
-          navigation.navigate("ListNotepad");
+          navigation.navigate(screens.listNotepad);
         }}
       />
       <Text>HomeScreen</Text>
