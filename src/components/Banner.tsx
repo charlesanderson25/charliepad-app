@@ -13,14 +13,10 @@ const ContainerViewBanner = styled.View`
   flex-direction: row;
 `;
 
-const Icon = styled(AntDesign)`
-  background-color: "#f9004d";
-`;
-
 const Banner = () => {
   return (
     <ContainerViewBanner>
-      <Icon name="book" size={24} color="black" />
+      <AntDesign style={styles.icon} name="book" size={24} color="black" />
       <Text style={styles.textTitle}>
         {textBanner.title}
         <Text style={styles.textTitleTwo}>{textBanner.titleTwo}</Text>{" "}
@@ -37,6 +33,10 @@ const styles = StyleSheet.create({
   },
 
   textTitleTwo: {
+    color: "#f9004d",
+  },
+
+  icon: {
     color: "#f9004d",
   },
 });
