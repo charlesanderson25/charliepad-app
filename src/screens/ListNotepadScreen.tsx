@@ -2,6 +2,7 @@ import { Text } from "react-native";
 import { View } from "react-native";
 import { useEffect, useState } from "react";
 import api from "../../api";
+import { FlatList } from "react-native-gesture-handler";
 
 const initialNotepads = {
   count: 0,
@@ -17,14 +18,21 @@ const ListNotepadScreen = ({ navigation, route }) => {
   }
 
   useEffect(() => {
-    const unsubscribe = navigation.adListenner("focus", () => {});
+    const unsubscribe = navigation.addListener("focus", () => {
+      loadNotepads();
+    });
 
     return unsubscribe;
   }, []);
 
   return (
     <View>
-      <Text>ListNotepadScreen</Text>
+      <FlatList
+        data={notepadList.notepads}
+        renderItem={({ item }) => {
+          return <Text>{item.title}</Text>;
+        }}
+      />
     </View>
   );
 };
