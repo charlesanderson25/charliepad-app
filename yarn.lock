@@ -6073,7 +6073,7 @@ react-native-gradle-plugin@^0.71.18:
     setimmediate "^1.0.5"
     string-hash-64 "^1.0.3"
 
-react-native-root-siblings@^4.0.0:
+react-native-root-siblings@^4.0.0, react-native-root-siblings@^4.1.1:
   version "4.1.1"
   resolved "https://registry.npmjs.org/react-native-root-siblings/-/react-native-root-siblings-4.1.1.tgz"
   integrity sha512-sdmLElNs5PDWqmZmj4/aNH4anyxreaPm61c4ZkRiR8SO/GzLg6KjAbb0e17RmMdnBdD0AIQbS38h/l55YKN4ZA==

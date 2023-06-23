@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import api from "../../api";
 import { FlatList } from "react-native-gesture-handler";
 import NotepadItem from "../components/NotepadItem";
+import CardPad from "../components/CardPad";
 
 const initialNotepads = {
   count: 0,
@@ -27,14 +28,14 @@ const ListNotepadScreen = ({ navigation, route }) => {
   }, []);
 
   return (
-    <View>
+    <CardPad>
       <FlatList
         data={notepadList.notepads}
         renderItem={({ item }) => {
           return <NotepadItem {...item} />;
         }}
       />
-    </View>
+    </CardPad>
   );
 };
 
