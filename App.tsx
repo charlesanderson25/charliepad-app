@@ -23,7 +23,7 @@ export default function App() {
         <StatusBar />
         <Banner />
 
-        <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Navigator initialRouteName={screens.home}>
           <Drawer.Screen
             name={screens.home}
             component={HomeScreen}
