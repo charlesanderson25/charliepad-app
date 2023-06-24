@@ -38,6 +38,7 @@ export default function App() {
             name={screens.createNotepad}
             component={CreateNotepadScreen}
             options={{
+              headerTitle: "Criar Notepad",
               drawerLabel: "Criar Notepad",
               drawerIcon({ color, focused, size }) {
                 return <Ionicons name="create" size={size} color={color} />;
@@ -48,6 +49,7 @@ export default function App() {
             name={screens.editNotepad}
             component={EditNotepadScreen}
             options={{
+              headerTitle: "Editar Notepad",
               drawerLabel: "Editar Notepad",
               drawerIcon({ color, focused, size }) {
                 return <Entypo name="edit" size={size} color={color} />;
@@ -58,7 +60,8 @@ export default function App() {
             name={screens.listNotepad}
             component={ListNotepadScreen}
             options={{
-              drawerLabel: "Listar Notepad",
+              headerTitle: "Listar Notepads",
+              drawerLabel: "Listar Notepads",
               drawerIcon({ color, focused, size }) {
                 return (
                   <FontAwesome5 name="list-ul" size={size} color={color} />
@@ -70,6 +73,7 @@ export default function App() {
             name={screens.viewNotepad}
             component={ViewNotepadScreen}
             options={{
+              headerTitle: "Ver Notepad",
               drawerLabel: "Ver Notepad",
               drawerIcon({ color, focused, size }) {
                 return <FontAwesome5 name="search" size={size} color={color} />;
