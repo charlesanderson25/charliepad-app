@@ -1,5 +1,5 @@
-import { View } from "react-native";
 import styled from "styled-components/native";
+import { TouchableOpacity } from "react-native";
 
 const Title = styled.Text`
   font-size: 18px;
@@ -19,12 +19,14 @@ const Container = styled.View`
   border-bottom-color: #aaa;
 `;
 
-const NotepadItem = ({ title, subtitle }) => {
+const NotepadItem = ({ title, subtitle, onPress }) => {
   return (
-    <Container>
-      <Title>{title}</Title>
-      <SubTitle>{subtitle}</SubTitle>
-    </Container>
+    <TouchableOpacity onPress={onPress}>
+      <Container>
+        <Title>{title}</Title>
+        <SubTitle>{subtitle}</SubTitle>
+      </Container>
+    </TouchableOpacity>
   );
 };
 
