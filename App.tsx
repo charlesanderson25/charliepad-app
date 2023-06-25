@@ -14,6 +14,14 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import screens from "./screens.json";
 
+const textsLabels = {
+  home: "Home",
+  create: "Criar Notepad",
+  edit: "Editar Notepad",
+  list: "Listar Notepads",
+  view: "Ver Notepad",
+};
+
 const Drawer = createDrawerNavigator();
 
 export default function App() {
@@ -28,7 +36,7 @@ export default function App() {
             name={screens.home}
             component={HomeScreen}
             options={{
-              drawerLabel: "Home",
+              drawerLabel: textsLabels.home,
               drawerIcon({ color, focused, size }) {
                 return <Ionicons name="home" size={size} color={color} />;
               },
@@ -38,8 +46,8 @@ export default function App() {
             name={screens.createNotepad}
             component={CreateNotepadScreen}
             options={{
-              headerTitle: "Criar Notepad",
-              drawerLabel: "Criar Notepad",
+              headerTitle: textsLabels.create,
+              drawerLabel: textsLabels.create,
               drawerIcon({ color, focused, size }) {
                 return <Ionicons name="create" size={size} color={color} />;
               },
@@ -49,8 +57,8 @@ export default function App() {
             name={screens.editNotepad}
             component={EditNotepadScreen}
             options={{
-              headerTitle: "Editar Notepad",
-              drawerLabel: "Editar Notepad",
+              headerTitle: textsLabels.edit,
+              drawerLabel: textsLabels.edit,
               drawerIcon({ color, focused, size }) {
                 return <Entypo name="edit" size={size} color={color} />;
               },
@@ -60,8 +68,8 @@ export default function App() {
             name={screens.listNotepad}
             component={ListNotepadScreen}
             options={{
-              headerTitle: "Listar Notepads",
-              drawerLabel: "Listar Notepads",
+              headerTitle: textsLabels.list,
+              drawerLabel: textsLabels.list,
               drawerIcon({ color, focused, size }) {
                 return (
                   <FontAwesome5 name="list-ul" size={size} color={color} />
@@ -73,8 +81,8 @@ export default function App() {
             name={screens.viewNotepad}
             component={ViewNotepadScreen}
             options={{
-              headerTitle: "Ver Notepad",
-              drawerLabel: "Ver Notepad",
+              headerTitle: textsLabels.view,
+              drawerLabel: textsLabels.view,
               drawerIcon({ color, focused, size }) {
                 return <FontAwesome5 name="search" size={size} color={color} />;
               },
