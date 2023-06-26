@@ -8,6 +8,12 @@ import Title from "../components/Title";
 import SubTitle from "../components/Subtitle";
 import Content from "../components/Content";
 import styled from "styled-components/native";
+import Button from "../components/Button";
+
+const textsViewNotepads = {
+  editButtonLabel: "Editar",
+  deleteButtonLabel: "Deletar",
+};
 
 const ContainerCard = styled(CardPad)`
   display: flex;
@@ -43,6 +49,8 @@ const ViewNotepadScreen = ({ navigation, route }) => {
 
   return (
     <ContainerCard>
+      <Button onPress={}>{textsViewNotepads.editButtonLabel}</Button>
+      <Button onPress={}>{textsViewNotepads.deleteButtonLabel}</Button>
       <Text>#{notepad.id}</Text>
       <Text>{transformCreatedAt}</Text>
       <Title>{notepad.title}</Title>
