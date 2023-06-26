@@ -6,6 +6,7 @@ import api from "../../api";
 import CardPad from "../components/CardPad";
 import Title from "../components/Title";
 import SubTitle from "../components/Subtitle";
+import Content from "../components/Content";
 
 const initialNotepads = {
   id: "",
@@ -39,7 +40,7 @@ const ViewNotepadScreen = ({ navigation, route }) => {
       <Text>{transformCreatedAt}</Text>
       <Title>{notepad.title}</Title>
       <SubTitle>{notepad.subtitle}</SubTitle>
-      <Text>{notepad.content}</Text>
+      <Content>{notepad.content}</Content>
     </CardPad>
   );
 };
