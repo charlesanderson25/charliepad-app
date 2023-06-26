@@ -44,7 +44,14 @@ const CreateNotepadScreen = ({ navigation }) => {
     });
 
     Toast.show(textsCreateNotepad.submit);
+    resetForm();
     navigation.navigate(screens.listNotepad);
+  }
+
+  function resetForm() {
+    setTitle(initialNotepads.title);
+    setSubTitle(initialNotepads.subtitle);
+    setContent(initialNotepads.content);
   }
 
   return (
@@ -52,16 +59,19 @@ const CreateNotepadScreen = ({ navigation }) => {
       <TextField
         placeholder={textsCreateNotepad.titleText}
         onChangeText={setTitle}
+        value={title}
       />
       <TextField
         placeholder={textsCreateNotepad.subtitleText}
         onChangeText={setSubTitle}
+        value={subtitle}
       />
       <TextField
         placeholder={textsCreateNotepad.contentText}
         multiline
         numberOfLines={6}
         onChangeText={setContent}
+        value={content}
       />
       <Button onPress={onSubmit}>Enviar</Button>
     </Container>
