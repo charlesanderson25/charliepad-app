@@ -59,6 +59,9 @@ export default function App() {
             options={{
               headerTitle: textsLabels.edit,
               drawerLabel: textsLabels.edit,
+              drawerItemStyle: {
+                height: 0,
+              },
               drawerIcon({ color, focused, size }) {
                 return <Entypo name="edit" size={size} color={color} />;
               },
@@ -83,6 +86,9 @@ export default function App() {
             options={{
               headerTitle: textsLabels.view,
               drawerLabel: textsLabels.view,
+              drawerItemStyle: {
+                height: 0,
+              },
               drawerIcon({ color, focused, size }) {
                 return <FontAwesome5 name="search" size={size} color={color} />;
               },
