@@ -1,16 +1,7 @@
 import styled from "styled-components/native";
 import { TouchableOpacity } from "react-native";
-
-const Title = styled.Text`
-  font-size: 18px;
-  font-weight: bold;
-  // /* font-family: JosefinSans-Regular; */
-`;
-
-const SubTitle = styled.Text`
-  font-size: 14px;
-  color: #444;
-`;
+import Title from "./Title";
+import SubTitle from "./Subtitle";
 
 const Container = styled.View`
   padding-horizontal: 10px;
