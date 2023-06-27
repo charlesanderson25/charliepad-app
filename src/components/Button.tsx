@@ -15,9 +15,9 @@ const ButtonText = styled.Text`
   font-weight: bold;
 `;
 
-const Button = ({ children, onPress }) => {
+const Button = ({ children, onPress, style }) => {
   return (
-    <ButtonContainer onPress={onPress}>
+    <ButtonContainer onPress={onPress} style={style}>
       <ButtonText>{children}</ButtonText>
     </ButtonContainer>
   );
