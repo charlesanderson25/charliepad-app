@@ -9,16 +9,27 @@ import SubTitle from "../components/Subtitle";
 import Content from "../components/Content";
 import styled from "styled-components/native";
 import Button from "../components/Button";
+import screens from "../../screens.json";
 
 const textsViewNotepads = {
   editButtonLabel: "Editar",
   deleteButtonLabel: "Deletar",
+  deleteSucess: "O notepad foi deletado com sucesso",
+  editSucess: "O notepad foi editado com sucesso",
 };
 
 const ContainerCard = styled(CardPad)`
   display: flex;
   flex-direction: column;
   gap: 4px;
+`;
+
+const DeleteButton = styled(Button)`
+  background-color: #f9004d;
+`;
+
+const EditButton = styled(Button)`
+  background-color: #d35400;
 `;
 
 const initialNotepads = {
@@ -39,6 +50,20 @@ const ViewNotepadScreen = ({ navigation, route }) => {
     setNotepad(response.data);
   }
 
+  async function onEdit() {
+    // const response = await api.patch(`/notepads/${notepadId}`);
+    // Toast.show(textsViewNotepads.editSucess);
+    navigation.navigate(screens.editNotepad, {
+      id: notepadId,
+    });
+  }
+
+  async function onDelete() {
+    const response = await api.delete(`/notepads/${notepadId}`);
+    Toast.show(textsViewNotepads.deleteSucess);
+    navigation.navigate(screens.listNotepad);
+  }
+
   useEffect(() => {
     const unsubscribe = navigation.addListener("focus", () => {});
 
@@ -49,13 +74,17 @@ const ViewNotepadScreen = ({ navigation, route }) => {
 
   return (
     <ContainerCard>
-      <Button onPress={}>{textsViewNotepads.editButtonLabel}</Button>
-      <Button onPress={}>{textsViewNotepads.deleteButtonLabel}</Button>
       <Text>#{notepad.id}</Text>
       <Text>{transformCreatedAt}</Text>
       <Title>{notepad.title}</Title>
       <SubTitle>{notepad.subtitle}</SubTitle>
       <Content>{notepad.content}</Content>
+      <EditButton onPress={onEdit}>
+        {textsViewNotepads.editButtonLabel}
+      </EditButton>
+      <DeleteButton onPress={onDelete}>
+        {textsViewNotepads.deleteButtonLabel}
+      </DeleteButton>
     </ContainerCard>
   );
 };
