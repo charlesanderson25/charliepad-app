@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Text } from "react-native";
 import { View } from "react-native";
+import api from "../../api";
 
 const EditNotepadScreen = ({ navigation, route }) => {
   const notepadId = route.params.id;
