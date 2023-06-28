@@ -5,6 +5,8 @@ import Toast from "react-native-root-toast";
 import { useState } from "react";
 import api from "../../api";
 import screens from "../../screens.json";
+import TextField from "../components/TextField";
+import Container from "../components/Container";
 
 const initialNotepads = {
   title: "",
@@ -19,17 +21,10 @@ const textsCreateNotepad = {
   submit: "Notepad criado com sucesso!",
 };
 
-const Container = styled.View`
-  margin: 14px;
-  gap: 8px;
-`;
-
-const TextField = styled.TextInput`
-  border-radius: 8px;
-  background-color: white;
-  padding: 8px;
-  border-width: 1px;
-`;
+// const Container = styled.View`
+//   margin: 14px;
+//   gap: 8px;
+// `;
 
 const CreateNotepadScreen = ({ navigation }) => {
   const [title, setTitle] = useState("");
