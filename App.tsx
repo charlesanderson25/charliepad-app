@@ -31,7 +31,7 @@ export default function App() {
         <StatusBar />
         <Banner />
 
-        <Drawer.Navigator initialRouteName={screens.home}>
+        <Drawer.Navigator initialRouteName={screens.home} backBehavior="order">
           <Drawer.Screen
             name={screens.home}
             component={HomeScreen}
