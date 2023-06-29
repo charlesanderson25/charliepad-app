@@ -27,11 +27,12 @@ const EditNotepadScreen = ({ navigation, route }) => {
   }
 
   async function onSubmit() {
-    const response = await api.patch(`/notepads/${notepadId}`, {
+    const notepadProps = {
       title,
       subtitle,
       content,
-    });
+    };
+    const response = await api.patch(`/notepads/${notepadId}`, notepadProps);
     Toast.show(textsEditNotepad.updateNotepadSucess);
     navigation.goBack();
   }
