@@ -13,6 +13,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import screens from "./screens.json";
+import LoadingOverlay from "./src/components/LoadingOverlay";
 
 const textsLabels = {
   home: "Home",
@@ -27,6 +28,7 @@ const Drawer = createDrawerNavigator();
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
+      <LoadingOverlay />
       <NavigationContainer>
         <StatusBar />
         <Banner />
