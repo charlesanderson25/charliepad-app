@@ -49,7 +49,9 @@ const EditNotepadScreen = ({ navigation, route }) => {
       <TextField value={title} onChangeText={setTitle} />
       <TextField value={subtitle} onChangeText={setSubtitle} />
       <TextField value={content} onChangeText={setContent} />
-      <Button onPress={onSubmit}>{textsEditNotepad.submitButton}</Button>
+      <Button isLoading={true} onPress={onSubmit}>
+        {textsEditNotepad.submitButton}
+      </Button>
     </Container>
   );
 };
