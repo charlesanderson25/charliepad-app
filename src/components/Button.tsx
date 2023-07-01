@@ -25,6 +25,7 @@
 
 // export default Button;
 
+import { ActivityIndicator } from "react-native";
 import styled from "styled-components/native";
 
 const ButtonContainer = styled.TouchableOpacity`
@@ -46,12 +47,19 @@ type ButtonProps = {
   children: React.ReactNode;
   onPress: () => Promise<void>;
   style?: any;
+  isLoading: boolean;
 };
 
-const Button: React.FC<ButtonProps> = ({ children, onPress, style }) => {
+const Button: React.FC<ButtonProps> = ({
+  children,
+  onPress,
+  style,
+  isLoading = false,
+}) => {
   return (
-    <ButtonContainer onPress={onPress} style={style}>
-      <ButtonText>{children}</ButtonText>
+    <ButtonContainer onPress={onPress} style={style} disable={isLoading}>
+      {isLoading && <ActivityIndicator size={30} color="#ecf0f1" />}
+      {!isLoading && <ButtonText>{children}</ButtonText>}
     </ButtonContainer>
   );
 };
