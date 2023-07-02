@@ -1,5 +1,14 @@
+// {
+//   "compilerOptions": {},
+//   "extends": "expo/tsconfig.base",
+//   "jsx": "react"
+// }
+
 {
-  "compilerOptions": {},
+  "compilerOptions": {
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["geojson"]
+  },
   "extends": "expo/tsconfig.base",
   "jsx": "react"
 }
