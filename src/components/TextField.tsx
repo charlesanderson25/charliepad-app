@@ -5,6 +5,7 @@ const TextField = styled.TextInput`
   background-color: white;
   padding: 8px;
   border-width: 1px;
+  border-color: ${(props) => (props.isFocused ? "#f9004d" : "#7f8c8d")};
 `;
 
 export default TextField;
