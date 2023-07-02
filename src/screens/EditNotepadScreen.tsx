@@ -24,6 +24,9 @@ const EditNotepadScreen = ({ navigation, route }) => {
   const [title, setTitle] = useState("");
   const [subtitle, setSubtitle] = useState("");
   const [content, setContent] = useState("");
+  const [isTitleFocused, setIsTitleFocused] = useState(false);
+  const [isSubtitbleFocused, setIsSubtitleFocused] = useState(false);
+  const [isContentFocused, setIsContentFocused] = useState(false);
   const isLoading: boolean = useGlobalState(
     (state: { isLoading: boolean }) => state.isLoading
   );
@@ -56,9 +59,27 @@ const EditNotepadScreen = ({ navigation, route }) => {
 
   return (
     <Container>
-      <TextField value={title} onChangeText={setTitle} />
-      <TextField value={subtitle} onChangeText={setSubtitle} />
-      <TextField value={content} onChangeText={setContent} />
+      <TextField
+        value={title}
+        onChangeText={setTitle}
+        isFocused={isTitleFocused}
+        onFocus={() => setIsTitleFocused(true)}
+        onBlur={() => setIsTitleFocused(false)}
+      />
+      <TextField
+        value={subtitle}
+        onChangeText={setSubtitle}
+        isFocused={isSubtitbleFocused}
+        onFocus={() => setIsSubtitleFocused(true)}
+        onBlur={() => setIsSubtitleFocused(false)}
+      />
+      <TextField
+        value={content}
+        onChangeText={setContent}
+        isFocused={isContentFocused}
+        onFocus={() => setIsContentFocused(true)}
+        onBlur={() => setIsContentFocused(false)}
+      />
       <Button isLoading={isLoading} onPress={onSubmit}>
         {textsEditNotepad.submitButton}
       </Button>
