@@ -75,7 +75,7 @@
 
 // export default CreateNotepadScreen;
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components/native";
 import { TextInput } from "react-native";
 import Button from "../components/Button";
@@ -99,11 +99,19 @@ const textsCreateNotepad = {
   send: "Enviar",
 };
 
-const CreateNotepadScreen = ({ navigation }) => {
+const CreateNotepadScreen = ({ navigation, route }) => {
   const [title, setTitle] = useState("");
   const [subtitle, setSubTitle] = useState("");
   const [content, setContent] = useState("");
   const [isLoading, setIsLoading] = useState(false); // Adicionado isLoading
+
+  const [coords, setCoords] = useState({
+    latitude: undefined,
+    longitude: undefined,
+  });
+
+  const latitude = coords.latitude;
+  const longitude = coords.longitude;
 
   async function onSubmit() {
     setIsLoading(true); // Ativar isLoading durante a submissão
@@ -113,6 +121,8 @@ const CreateNotepadScreen = ({ navigation }) => {
         title,
         subtitle,
         content,
+        latitude,
+        longitude,
       });
 
       Toast.show(textsCreateNotepad.submit);
@@ -131,6 +141,19 @@ const CreateNotepadScreen = ({ navigation }) => {
     setSubTitle(initialNotepads.subtitle);
     setContent(initialNotepads.content);
   }
+
+  function loadGeolocationParams() {
+    const coords = route.params.coords;
+
+    setCoords(coords);
+  }
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener("focus", () => {
+      loadGeolocationParams();
+    });
+    return unsubscribe;
+  }, [route.params]);
 
   return (
     <Container>
@@ -151,6 +174,8 @@ const CreateNotepadScreen = ({ navigation }) => {
         onChangeText={setContent}
         value={content}
       />
+      {latitude && <TextField value={latitude.toString()} editable={false} />}
+      {longitude && <TextField value={longitude.toString()} editable={false} />}
       <Button isLoading={isLoading} onPress={onSubmit}>
         {textsCreateNotepad.send}
       </Button>
