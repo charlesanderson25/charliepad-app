@@ -31,7 +31,7 @@ export default function App() {
       <LoadingOverlay />
       <NavigationContainer>
         <StatusBar />
-        <Banner />
+        {/* <Banner /> */}
 
         <Drawer.Navigator
           initialRouteName={screens.home}
