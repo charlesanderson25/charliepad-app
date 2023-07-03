@@ -85,7 +85,7 @@ const HomeScreen = ({ navigation }) => {
         provider={PROVIDER_GOOGLE}
         onLongPress={(event) => {
           const coords = event.nativeEvent.coordinate;
-          navigation.navigate(screens.createNotepad, coords);
+          navigation.navigate(screens.createNotepad, { coords });
         }}
       >
         {notepadsMarkers}
