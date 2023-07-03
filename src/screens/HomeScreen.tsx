@@ -1,4 +1,3 @@
-import { Button } from "react-native";
 import { View, Text } from "react-native";
 import screens from "../../screens.json";
 import MapView from "react-native-maps";
@@ -84,6 +83,10 @@ const HomeScreen = ({ navigation }) => {
         showsUserLocation={true}
         style={{ width: "100%", height: "100%" }}
         provider={PROVIDER_GOOGLE}
+        onLongPress={(event) => {
+          const coords = event.nativeEvent.coordinate;
+          navigation.navigate(screens.createNotepad, coords);
+        }}
       >
         {notepadsMarkers}
       </MapView>
