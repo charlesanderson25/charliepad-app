@@ -59,6 +59,10 @@ const HomeScreen = ({ navigation }) => {
     navigation.navigate(screens.viewNotepad, { id: notepad.id });
   }
 
+  // function onMarkerPress(notepad) {
+  //   navigation.navigate(screens.viewNotepad, { coords: notepad });
+  // }
+
   useEffect(() => {
     loadGeoLocation();
     const unsubscribe = navigation.addListener("focus", () => {
